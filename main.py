@@ -154,5 +154,5 @@ def main():
             st.error("Failed to fetch data. Status code: " + str(response.status_code))
 
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     main()
