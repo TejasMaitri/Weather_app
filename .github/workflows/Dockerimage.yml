@@ -1,0 +1,23 @@
+name: Build and Push Docker Image
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Login to Docker Hub
+        run: echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+
+      - name: Build Docker image
+        run: docker build -t tejasmetri19/weather_app:latest .
+
+      - name: Push Docker image to Docker Hub
+        run: docker push tejasmetri19/weather_app:latest
