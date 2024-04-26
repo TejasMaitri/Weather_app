@@ -124,7 +124,7 @@ def main():
         if response.status_code == 200:
             csv_data = response.text
             df = pd.read_csv(StringIO(csv_data))
-            target_variables = ['temp', 'feelslike', 'humidity', 'windspeed']
+            target_variables = ['temp', 'feelslike', 'humidity', 'windspeed','cloudcover', 'precip', 'dew', 'solarradiation']
             X = df[['tempmin', 'tempmax', 'feelslikemin', 'feelslikemax', 'humidity', 'windspeed', 'cloudcover', 'precip', 'dew', 'solarradiation']]
             dates = pd.to_datetime(df['datetime'])
             models = {var: RandomForestRegressor(n_estimators=100) for var in target_variables}
