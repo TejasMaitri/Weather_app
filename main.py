@@ -117,7 +117,7 @@ def main():
     # Fetch historical weather data and predictions
     if st.button("Predictions For Next 3 Days"):
         visual_crossing_url = (
-            "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/goa%2C%20india/last15days?unitGroup=metric&include=days&key=M8Y7MK6356T28MAQHA7E8KWWU&contentType=csv"
+            "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/goa%20india/last15days?unitGroup=metric&include=days&key=LYGG94T8QU8G8VLSEXYSYSUYY&contentType=csv"
         )
         response = requests.get(visual_crossing_url)
 
